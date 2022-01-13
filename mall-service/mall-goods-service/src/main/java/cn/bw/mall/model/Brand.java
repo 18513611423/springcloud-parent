@@ -1,14 +1,19 @@
 package cn.bw.mall.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
+import java.util.List;
 
+/*****
+ * @Author: http://www.itheima.com
+ * @Description: com.gupaoedu.vip.mall.goods.model.Brand
+ ****/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,4 +32,8 @@ public class Brand implements Serializable {
     private String initial;
     //    品牌排序
     private Integer sort;
+
+    //分类
+    @TableField(exist = false)
+    private List<Category> categories;
 }
